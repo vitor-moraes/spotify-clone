@@ -1,0 +1,16 @@
+/* This is a provisional file, it will be changed to the respective styles in ich component or page folder */
+
+/* Styles used by the app */
+.root {
+}
+
+.App {
+  height: calc(100vh - 90px);
+  background: #121212;
+}
+
+.outer-wrap {
+  background: #121212;
+  height: 100vh;
+  min-height: 100%;
+}
