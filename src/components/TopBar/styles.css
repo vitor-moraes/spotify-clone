@@ -1,0 +1,36 @@
+.up-bar {
+  background: darkslategray;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  padding: 1rem 1rem;
+}
+
+.music-row {
+}
+
+.music-col {
+}
+
+.music-card {
+  background-color: #272727;
+  border-radius: 10%;
+  width: 200px;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.card-image {
+  height: 160px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 0.4rem 0;
+  font-weight: 600;
+}

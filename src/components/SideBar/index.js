@@ -31,7 +31,7 @@ export default function SideBar() {
                 fill="currentColor"
               ></path>
             </svg>
-            Home
+            Início
           </li>
           {/* Search Item */}
           <li className="side-nav-item">
@@ -48,7 +48,7 @@ export default function SideBar() {
                 fill-rule="evenodd"
               ></path>
             </svg>
-            Search
+            Buscar
           </li>
           {/* Your Library Item */}
           <li className="side-nav-item">
@@ -64,7 +64,7 @@ export default function SideBar() {
                 fill="currentColor"
               ></path>
             </svg>
-            Your Library
+            Sua Biblioteca
           </li>
         </ul>
         {/* Cookies and Privacy Policy Item */}

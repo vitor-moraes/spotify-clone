@@ -1,17 +1,12 @@
 // Imports
 import React from "react";
-import SideBar from "./components/SideBar";
-import MusicController from "./components/MusicController";
-
+import MainPage from "./pages/MainPage";
 // Exports
 function App() {
   return (
     <>
       <div className="outer-wrap">
-        <div className="App">
-          <SideBar />
-          <MusicController />
-        </div>
+        <MainPage />
       </div>
     </>
   );
