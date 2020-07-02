@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+.main-box {
+}
+
 .up-bar {
   background: darkslategray;
   position: sticky;
@@ -14,10 +20,19 @@
 
 .music-card {
   background-color: #272727;
-  border-radius: 10%;
+  border-radius: 5%;
   width: 200px;
+  height: 270px;
   overflow: hidden;
   padding: 1.5rem;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.music-card:hover {
+  background: #424242;
+  color: white;
 }
 
 .card-image {
@@ -33,4 +48,14 @@
 .card-content {
   padding: 0.4rem 0;
   font-weight: 600;
+}
+
+.card-content-sub {
+  color: #6b6b6b;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-content-sub:hover {
+  color: white;
 }

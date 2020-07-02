@@ -1,0 +1,12 @@
+.main-app-box {
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.side-bar-box {
+  padding: 0px;
+}
+.other-box {
+  padding: 0px;
+  margin-bottom: 100px;
+}
