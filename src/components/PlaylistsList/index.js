@@ -1,38 +1,32 @@
 // Imports
-import React, { useEffect } from "react";
-import $ from "jquery";
+import React, { useState } from "react";
 import "./styles.css";
 import { ReactComponent as PlayIcon } from "../../svgs/PlayIcon.svg";
 
 // Exports
 const PlaylistsList = () => {
+  // States
+  const [showPlay, setShowPlay] = useState(null);
+
+  //Simulanting a databank
   const dataCaterories = [
     {
       id: 1,
-      name: "Category 1",
+      name: "Tocadas Recentemente",
     },
-    {
-      id: 2,
-      name: "Category 2",
-    },
-    {
-      id: 3,
-      name: "Category 3",
-    },
-    {
-      id: 4,
-      name: "Category 4",
-    },
+    // {
+    //   id: 2,
+    //   name: "Seus podcasts mais escutados",
+    // },
+    // {
+    //   id: 3,
+    //   name: "Paradas",
+    // },
+    // {
+    //   id: 4,
+    //   name: "Para cantar junto",
+    // },
   ];
-
-  useEffect(() => {
-    $(document).ready(function () {
-      $(".music-card").mouseover(function () {
-        console.log("ok");
-        $(".play-icon").attr("style", "display: 'block !important'");
-      });
-    });
-  }, []);
 
   return (
     <div>
@@ -48,7 +42,12 @@ const PlaylistsList = () => {
             <div className="row music-row" style={{ padding: 10 }}>
               {/* Playlist One */}
               <div classname="music-col col-2">
-                <div className="music-card show card">
+                <div
+                  className="music-card show card"
+                  id="card-1"
+                  onMouseEnter={() => setShowPlay("play-1")}
+                  onMouseLeave={() => setShowPlay(null)}
+                >
                   <div className="card-image">
                     <img
                       className="image"
@@ -62,15 +61,22 @@ const PlaylistsList = () => {
                   <div className="card-content-sub text-left">
                     <p>Usuário</p>
                   </div>
-                  {/* The PlayIcon is not appearing */}
-                  <span className="play-icon">
-                    <PlayIcon />
-                  </span>
+                  {/* The PlayIcon */}
+                  {showPlay === "play-1" && (
+                    <span className="play-icon" id="play-1">
+                      <PlayIcon />
+                    </span>
+                  )}
                 </div>
               </div>
               {/* Playlist two */}
               <div classname="music-col col-2">
-                <div className="music-card card">
+                <div
+                  className="music-card card"
+                  id="card-2"
+                  onMouseEnter={() => setShowPlay("play-2")}
+                  onMouseLeave={() => setShowPlay(null)}
+                >
                   <div className="card-image">
                     <img
                       className="image"
@@ -82,11 +88,22 @@ const PlaylistsList = () => {
                   <div className="card-content-sub text-left">
                     <p>Primo</p>
                   </div>
+                  {/* The PlayIcon */}
+                  {showPlay === "play-2" && (
+                    <span className="play-icon" id="play-2">
+                      <PlayIcon />
+                    </span>
+                  )}
                 </div>
               </div>
               {/* Playlist three */}
               <div classname="music-col col-2">
-                <div className="music-card card">
+                <div
+                  className="music-card card"
+                  id="card-3"
+                  onMouseEnter={() => setShowPlay("play-3")}
+                  onMouseLeave={() => setShowPlay(null)}
+                >
                   <div className="card-image">
                     <img
                       className="image"
@@ -98,11 +115,22 @@ const PlaylistsList = () => {
                   <div className="card-content-sub text-left">
                     <p>Alerson Vieira</p>
                   </div>
+                  {/* The PlayIcon */}
+                  {showPlay === "play-3" && (
+                    <span className="play-icon" id="play-3">
+                      <PlayIcon />
+                    </span>
+                  )}
                 </div>
               </div>
               {/* Playlist four */}
               <div classname="music-col col-2">
-                <div className="music-card card">
+                <div
+                  className="music-card card"
+                  id="card-3"
+                  onMouseEnter={() => setShowPlay("play-4")}
+                  onMouseLeave={() => setShowPlay(null)}
+                >
                   <div className="card-image">
                     <img
                       className="image"
@@ -114,6 +142,12 @@ const PlaylistsList = () => {
                   <div className="card-content-sub text-left">
                     <p>Magda Campos</p>
                   </div>
+                  {/* The PlayIcon */}
+                  {showPlay === "play-4" && (
+                    <span className="play-icon" id="play-4">
+                      <PlayIcon />
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

@@ -20,11 +20,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.music-card:hover {
-  background: #424242;
-  color: white;
-}
-
 .card-image {
   height: 130px;
 }
@@ -58,8 +53,7 @@
   background: #1db954;
   bottom: 15px;
   right: 15px;
-  /* Algum conflitos de classes no css */
-  display: none !important;
+  opacity: 1;
 }
 
 /* This works? */

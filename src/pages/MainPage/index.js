@@ -22,7 +22,9 @@ export default function MainPage() {
               </div>
             </div>
           </div>
-          <MusicController />
+          <div className="music-controller">
+            <MusicController />
+          </div>
         </div>
       </div>
     </>
