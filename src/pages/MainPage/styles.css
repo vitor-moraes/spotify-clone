@@ -6,7 +6,12 @@
 .side-bar-box {
   padding: 0px;
 }
+
 .other-box {
   padding: 0px;
   margin-bottom: 100px;
+}
+
+.padding-to-main {
+  padding: 20px;
 }

@@ -17,7 +17,7 @@ export default function MainPage() {
             <div className="col-9 col-lg-10 other-box">
               <TopBar />
               {/* Arrumar esse padding que não deveria estar aqui, tem muitos paddings já no MainContainer */}
-              <div style={{ padding: 20 }}>
+              <div className="padding-to-main">
                 <MainContainer />
               </div>
             </div>
