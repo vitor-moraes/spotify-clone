@@ -5,7 +5,12 @@
 .playlist-col {
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .playlist-card {
+  color: white;
   background-color: #272727;
   border-radius: 5%;
   width: 170px;

@@ -7,6 +7,9 @@ import SideBar from "../../components/SideBar";
 import MusicController from "../../components/MusicController";
 import TopBar from "../../components/TopBar";
 import HomePage from "../HomePage";
+import SearchPage from "../SearchPage";
+import YourLibraryPage from "../YourLibraryPage";
+import PlaylistsPage from "../PlaylistsPage";
 
 // Routes
 import { Switch, Route } from "react-router-dom";
@@ -32,8 +35,15 @@ export default function MainPage() {
                   <div className="main-content">
                     <Switch>
                       <Route path="/" exact component={HomePage}></Route>
-                      <Route path="/search"> Search Section </Route>
-                      <Route path="/your-library"> Your Lybrary Section </Route>
+                      <Route path="/search" component={SearchPage}></Route>
+                      <Route
+                        path="/your-library"
+                        component={YourLibraryPage}
+                      ></Route>
+                      <Route
+                        path="/playlist/:id"
+                        component={PlaylistsPage}
+                      ></Route>
                     </Switch>
                   </div>
                 </div>
