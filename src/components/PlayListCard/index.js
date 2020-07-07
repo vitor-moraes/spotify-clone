@@ -7,80 +7,115 @@ import { ReactComponent as PlayIcon } from "../../svgs/PlayIcon.svg";
 
 // Exports
 const PlayListCard = (props) => {
-    // States
+  // States
   const [showPlay, setShowPlay] = useState(null);
 
   //Simulating a databank
   const dataPlayLists = [
     {
       id: 101,
-      category_id: 3,
+      category_id: 1,
       name: "Musicas Favoritas",
       img: "https://wallpaperplay.com/walls/full/1/e/1/284743.jpg",
-      // desc: "O que é isso?",
+      desc: "Sua criação",
     },
     {
       id: 102,
-      category_id: 3,
+      category_id: 1,
       name: "Acústica",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQesdaQQoqxHNWBwGMmRE9KPaB0UbOtNRe9Nw&usqp=CAU",
-      // desc: "O que é isso?",
+      img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQesdaQQoqxHNWBwGMmRE9KPaB0UbOtNRe9Nw&usqp=CAU",
+      desc: "Joye Singer",
     },
     {
       id: 103,
-      category_id: 3,
+      category_id: 1,
       name: "Relaxando",
-      img: "https://mymodernmet.com/wp/wp-content/uploads/archive/PzCXG-YMrs2butbRX0iu_1082132503.jpeg",
-      // desc: "O que é isso?",
+      img:
+        "https://mymodernmet.com/wp/wp-content/uploads/archive/PzCXG-YMrs2butbRX0iu_1082132503.jpeg",
+      desc: "Alberto Campos",
     },
     {
       id: 104,
+      category_id: 1,
+      name: "Conexão",
+      img:
+        "https://wallpaperstock.net/island-green-ocean_wallpapers_38269_2560x1600.jpg",
+      desc: "Alê Oyura",
+    },
+
+    {
+      id: 111,
+      category_id: 2,
+      name: "Musicas Favoritas",
+      img: "https://wallpaperplay.com/walls/full/1/e/1/284743.jpg",
+      desc: "Sua criação",
+    },
+
+    {
+      id: 112,
+      category_id: 2,
+      name: "Acústica",
+      img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQesdaQQoqxHNWBwGMmRE9KPaB0UbOtNRe9Nw&usqp=CAU",
+      desc: "Joye Singer",
+    },
+
+    {
+      id: 113,
+      category_id: 3,
+      name: "Relaxando",
+      img:
+        "https://mymodernmet.com/wp/wp-content/uploads/archive/PzCXG-YMrs2butbRX0iu_1082132503.jpeg",
+      desc: "Alberto Campos",
+    },
+
+    {
+      id: 114,
       category_id: 3,
       name: "Conexão",
-      img: "https://wallpaperstock.net/island-green-ocean_wallpapers_38269_2560x1600.jpg",
-      // desc: "O que é isso?",
+      img:
+        "https://wallpaperstock.net/island-green-ocean_wallpapers_38269_2560x1600.jpg",
+      desc: "Alê Oyura",
     },
-  ]
+  ];
 
-  // 
+  // Varre o banco de dados criado e guarda em "playlist" conforme o id
   const matchedPlaylists = dataPlayLists.filter(
     (playlist) => playlist.category_id === props.category_id
-  )
+  );
 
   return (
     <>
-    {/* Here have just one music-card that need to be changed to "play-list-card" */}
-    {matchedPlaylists.map((playlist, id) => (
-      <div
-                  className="music-card show card"
-                  id="card-1"
-                  key={playlist.id}
-                  onMouseEnter={() => setShowPlay("play-1")}
-                  onMouseLeave={() => setShowPlay(null)}
-                >
-                  <div className="card-image">
-                    <img
-                      className="image"
-                      src={playlist.img}
-                      alt="pic 1"
-                    ></img>
-                  </div>
-                  <div className="card-content text-left">
-                    Musicas Favoritas
-                  </div>
-                  <div className="card-content-sub text-left">
-                    <p>Usuário</p>
-                  </div>
-                  {/* The PlayIcon */}
-                  {showPlay === "play-1" && (
-                    <span className="play-icon" id="play-1">
-                      <PlayIcon />
-                    </span>
-                  )}
-                </div>
-                ))}
+      {/* Here have just one music-card that need to be changed to "play-list-card" */}
+      {matchedPlaylists.map((playlist, id) => {
+        return (
+          <div classname="playlist-col col-2">
+            <div
+              className="playlist-card show card"
+              key={id}
+              onMouseEnter={() => setShowPlay(id)}
+              onMouseLeave={() => setShowPlay(null)}
+            >
+              <div className="card-image">
+                <img className="image" src={playlist.img} alt="pic 1"></img>
+              </div>
+              <div className="card-content text-left">{playlist.name}</div>
+              <div className="card-content-sub text-left">
+                <p>{playlist.desc}</p>
+              </div>
+              {/* The PlayIcon */}
+              {showPlay === id && (
+                <span className="play-icon" id={id}>
+                  <PlayIcon />
+                </span>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </>
   );
-}
+};
 
-export default function PlayListCard;
+export default PlayListCard;
