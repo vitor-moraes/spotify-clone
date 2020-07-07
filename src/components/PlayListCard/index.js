@@ -80,14 +80,14 @@ const PlayListCard = (props) => {
     },
   ];
 
-  // Varre o banco de dados criado e guarda em "playlist" conforme o id
+  // Use the databank created in this coponente to plot the playlists that have the same ID
+  // present in the PlayListsRow databank ID
   const matchedPlaylists = dataPlayLists.filter(
     (playlist) => playlist.category_id === props.category_id
   );
 
   return (
     <>
-      {/* Here have just one music-card that need to be changed to "play-list-card" */}
       {matchedPlaylists.map((playlist, id) => {
         return (
           <div classname="playlist-col col-2">
