@@ -1,11 +1,13 @@
-// Imports
-import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+// Not usefull till now
 
-//Import (pages)
-import MainPage from "./pages/MainPage";
+// // Imports
+// import React from "react";
+// import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-//Exports
-export default function routes() {
-  return <div></div>;
-}
+// //Import (pages)
+// import MainPage from "./pages/MainPage";
+
+// //Exports
+// export default function routes() {
+//   return <div></div>;
+// }

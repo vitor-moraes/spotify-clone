@@ -1,12 +1,17 @@
+// Imports
 import React from "react";
+import "./styles.css";
+
+// Components
 import SideBar from "../../components/SideBar";
 import MusicController from "../../components/MusicController";
 import TopBar from "../../components/TopBar";
-import PlaylistsRow from "../../components/PlaylistsRow";
-import "./styles.css";
+import HomePage from "../HomePage";
 
+// Routes
 import { Switch, Route } from "react-router-dom";
 
+// Exports
 export default function MainPage() {
   return (
     <>
@@ -26,9 +31,10 @@ export default function MainPage() {
                 >
                   <div className="main-content">
                     <Switch>
-                      <Route to="/" exact component={PlaylistsRow}></Route>
+                      <Route path="/" exact component={HomePage}></Route>
+                      <Route path="/search"> Search Section </Route>
+                      <Route path="/your-library"> Your Lybrary Section </Route>
                     </Switch>
-                    {/* <PlaylistsRow /> */}
                   </div>
                 </div>
               </div>

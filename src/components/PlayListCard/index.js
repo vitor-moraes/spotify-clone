@@ -5,17 +5,19 @@ import React, { useState } from "react";
 import "./styles.css";
 import { ReactComponent as PlayIcon } from "../../svgs/PlayIcon.svg";
 
+import { Link } from "react-router-dom";
+
 // Exports
 const PlayListCard = (props) => {
   // States
   const [showPlay, setShowPlay] = useState(null);
 
-  //Simulating a databank
+  //Simulating a database
   const dataPlayLists = [
     {
       id: 101,
       category_id: 1,
-      name: "Musicas Favoritas",
+      name: "Mais escutadas",
       img: "https://wallpaperplay.com/walls/full/1/e/1/284743.jpg",
       desc: "Sua criação",
     },
@@ -47,7 +49,7 @@ const PlayListCard = (props) => {
     {
       id: 111,
       category_id: 2,
-      name: "Musicas Favoritas",
+      name: "Mais escutadas",
       img: "https://wallpaperplay.com/walls/full/1/e/1/284743.jpg",
       desc: "Sua criação",
     },
@@ -90,28 +92,30 @@ const PlayListCard = (props) => {
     <>
       {matchedPlaylists.map((playlist, id) => {
         return (
-          <div classname="playlist-col col-2">
-            <div
-              className="playlist-card show card"
-              key={id}
-              onMouseEnter={() => setShowPlay(id)}
-              onMouseLeave={() => setShowPlay(null)}
-            >
-              <div className="card-image">
-                <img className="image" src={playlist.img} alt="pic 1"></img>
+          <Link to={"/playlist/" + playlist.id}>
+            <div classname="playlist-col col-2">
+              <div
+                className="playlist-card show card"
+                key={id}
+                onMouseEnter={() => setShowPlay(id)}
+                onMouseLeave={() => setShowPlay(null)}
+              >
+                <div className="card-image">
+                  <img className="image" src={playlist.img} alt="pic 1"></img>
+                </div>
+                <div className="card-content text-left">{playlist.name}</div>
+                <div className="card-content-sub text-left">
+                  <p>{playlist.desc}</p>
+                </div>
+                {/* The PlayIcon */}
+                {showPlay === id && (
+                  <span className="play-icon" id={id}>
+                    <PlayIcon />
+                  </span>
+                )}
               </div>
-              <div className="card-content text-left">{playlist.name}</div>
-              <div className="card-content-sub text-left">
-                <p>{playlist.desc}</p>
-              </div>
-              {/* The PlayIcon */}
-              {showPlay === id && (
-                <span className="play-icon" id={id}>
-                  <PlayIcon />
-                </span>
-              )}
             </div>
-          </div>
+          </Link>
         );
       })}
     </>

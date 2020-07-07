@@ -1,11 +1,11 @@
 // Imports
 import React from "react";
 import "./styles.css";
-import PlayListCard from "../PlayListCard";
+import PlayListCard from "../../components/PlayListCard";
 
 // Exports
-const PlaylistsRow = () => {
-  //Simulanting a databank
+const HomePage = () => {
+  //Simulanting a database
   const dataCaterories = [
     {
       id: 1,
@@ -37,7 +37,6 @@ const PlaylistsRow = () => {
               ver tudo
             </p>
             <div className="row music-row" style={{ padding: 10 }}>
-              {/* Playlist One */}
               <PlayListCard category_id={category.id} />
             </div>
           </div>
@@ -47,4 +46,4 @@ const PlaylistsRow = () => {
   );
 };
 
-export default PlaylistsRow;
+export default HomePage;
