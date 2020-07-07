@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { ReactComponent as PlayIcon } from "../../svgs/PlayIcon.svg";
+// import PlayListCard from "../PlayListCard";
 
 // Exports
-const PlaylistsList = () => {
+const PlaylistsRow = () => {
   // States
   const [showPlay, setShowPlay] = useState(null);
 
@@ -42,6 +43,7 @@ const PlaylistsList = () => {
             <div className="row music-row" style={{ padding: 10 }}>
               {/* Playlist One */}
               <div classname="music-col col-2">
+                {/* --------------- Pass this cards to a component -------------------- */}
                 <div
                   className="music-card show card"
                   id="card-1"
@@ -68,9 +70,11 @@ const PlaylistsList = () => {
                     </span>
                   )}
                 </div>
+                {/* ------------------------------------------------------------------- */}
               </div>
               {/* Playlist two */}
               <div classname="music-col col-2">
+                {/* --------------- Pass this cards to a component -------------------- */}
                 <div
                   className="music-card card"
                   id="card-2"
@@ -95,9 +99,11 @@ const PlaylistsList = () => {
                     </span>
                   )}
                 </div>
+                {/* ------------------------------------------------------------------- */}
               </div>
               {/* Playlist three */}
               <div classname="music-col col-2">
+                {/* --------------- Pass this cards to a component -------------------- */}
                 <div
                   className="music-card card"
                   id="card-3"
@@ -122,9 +128,11 @@ const PlaylistsList = () => {
                     </span>
                   )}
                 </div>
+                {/* ------------------------------------------------------------------- */}
               </div>
               {/* Playlist four */}
               <div classname="music-col col-2">
+                {/* --------------- Pass this cards to a component -------------------- */}
                 <div
                   className="music-card card"
                   id="card-3"
@@ -149,6 +157,7 @@ const PlaylistsList = () => {
                     </span>
                   )}
                 </div>
+                {/* ------------------------------------------------------------------- */}
               </div>
             </div>
           </div>
@@ -158,4 +167,4 @@ const PlaylistsList = () => {
   );
 };
 
-export default PlaylistsList;
+export default PlaylistsRow;

@@ -1,9 +1,11 @@
 import React from "react";
 import SideBar from "../../components/SideBar";
 import MusicController from "../../components/MusicController";
-import MainContainer from "../../components/MainContainer";
 import TopBar from "../../components/TopBar";
+import PlaylistsRow from "../../components/PlaylistsRow";
 import "./styles.css";
+
+import { Switch, Route } from "react-router-dom";
 
 export default function MainPage() {
   return (
@@ -16,9 +18,19 @@ export default function MainPage() {
             </div>
             <div className="col-9 col-lg-10 other-box">
               <TopBar />
-              {/* Arrumar esse padding que não deveria estar aqui, tem muitos paddings já no MainContainer */}
+              {/* Main container */}
               <div className="padding-to-main">
-                <MainContainer />
+                <div
+                  className="main-box container text-light text-center col-12"
+                  style={{ padding: 10 }}
+                >
+                  <div className="main-content">
+                    <Switch>
+                      <Route to="/" exact component={PlaylistsRow}></Route>
+                    </Switch>
+                    {/* <PlaylistsRow /> */}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

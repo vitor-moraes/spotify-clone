@@ -5,6 +5,8 @@ import { ReactComponent as HomeIcon } from "../../svgs/HomeIcon.svg";
 import { ReactComponent as SearchIcon } from "../../svgs/SearchIcon.svg";
 import { ReactComponent as LibraryIcon } from "../../svgs/LibraryIcon.svg";
 
+import { Link, Route } from "react-router-dom";
+
 // Exports
 export default function SideBar() {
   return (
@@ -20,19 +22,25 @@ export default function SideBar() {
       </div>
       <div className="side-nav">
         <ul className="side-nav-itens">
-          <li className="side-nav-item">
-            <HomeIcon />
-            Início
-          </li>
-          <li className="side-nav-item">
-            <SearchIcon />
-            Buscar
-          </li>
+          <Link to="/">
+            <li className="side-nav-item">
+              <HomeIcon />
+              Início
+            </li>
+          </Link>
+          <Link to="/search">
+            <li className="side-nav-item">
+              <SearchIcon />
+              Buscar
+            </li>
+          </Link>
           {/* Your Library Item */}
-          <li className="side-nav-item">
-            <LibraryIcon />
-            Sua Biblioteca
-          </li>
+          <Link to="/your-library">
+            <li className="side-nav-item">
+              <LibraryIcon />
+              Sua Biblioteca
+            </li>
+          </Link>
         </ul>
         {/* Cookies and Privacy Policy Item */}
         <div className="cookies-privacy">
